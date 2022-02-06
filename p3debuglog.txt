@@ -1,0 +1,181 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x722: file p3final.c, line 9.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3final.c:9
+9     n = input_n();
+(gdb) s
+input_n () at p3final.c:13
+13  int input_n(){
+(gdb) n
+15    printf("How many numbers to be added? ");
+(gdb) n
+16    scanf("%d", &n);
+(gdb) n
+How many numbers to be added? 3
+17    return n;
+(gdb) n
+18  }
+(gdb) n
+main () at p3final.c:10
+10    sum = sum_n(n);
+(gdb) p n
+$1 = 3
+(gdb) 
+$2 = 3
+(gdb) 
+$3 = 3
+(gdb) s
+sum_n (n=3) at p3final.c:20
+20    int sum = 0;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$4 = 0
+(gdb) p sum
+$5 = 0
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$6 = 1
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 3135] will be killed.
+
+Quit anyway? (y or n) y
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x722: file p3final.c, line 9.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3final.c:9
+9     n = input_n();
+(gdb) s
+input_n () at p3final.c:13
+13  int input_n(){
+(gdb) n
+15    printf("How many numbers to be added? ");
+(gdb) n
+16    scanf("%d", &n);
+(gdb) n
+How many numbers to be added? 3
+17    return n;
+(gdb) n
+18  }
+(gdb) n
+main () at p3final.c:10
+10    sum = sum_n(n);
+(gdb) p n
+$1 = 3
+(gdb) s
+sum_n (n=3) at p3final.c:20
+20    int sum = 0;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$2 = 0
+(gdb) p sum
+$3 = 0
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$4 = 1
+(gdb) p sum
+$5 = 1
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$6 = 2
+(gdb) p sum
+$7 = 3
+(gdb) n
+22      sum += i;
+(gdb) n
+21    for(int i = 0; i<=n; i++){
+(gdb) p i
+$8 = 3
+(gdb) p sum
+$9 = 6
+(gdb) n
+24    return sum;
+(gdb) n
+25  }
+(gdb) n
+main () at p3final.c:11
+11    output(n, sum);
+(gdb) p sum
+$10 = 6
+(gdb) s
+output (n=3, sum=6) at p3final.c:27
+27    for(int i= 1;i<n;i++){
+(gdb) n
+28      printf("%d + ", i);
+(gdb) n
+27    for(int i= 1;i<n;i++){
+(gdb) n
+28      printf("%d + ", i);
+(gdb) n
+27    for(int i= 1;i<n;i++){
+(gdb) n
+30    printf("%d = %d\n", n, sum);
+(gdb) n
+1 + 2 + 3 = 6
+31  }(gdb) n
+main () at p3final.c:12
+12  return 0;
+(gdb) n
+13 }
+(gdb) c
+Continuing.
+[Inferior 1 (process 3152) exited normally]
+(gdb) q
