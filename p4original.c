@@ -46,5 +46,5 @@ void output(int n, int sum, int a[n])
   {
     printf("%d + ", a[i]);
   }
-  printf("%d = %d\n", n, sum);
+  printf("%d = %d\n", a[n-1], sum);
 }
